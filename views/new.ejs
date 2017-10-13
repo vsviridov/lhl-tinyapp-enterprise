@@ -1,0 +1,9 @@
+<%- include("partials/_header") %>
+<form action="/urls/new" method="post">
+  <div class="form-group">
+    <label for="longUrl">URL</label>
+    <input id="longUrl" type="text" class="form-control" placeholder="http://" name="longUrl">
+  </div>
+  <button class="btn" type="submit">Shorten</button>
+</form>
+<%- include("partials/_footer") %>

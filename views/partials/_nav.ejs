@@ -1,0 +1,21 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">TinyApp</a>
+  <% if(loggedIn) { %>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/urls/new">New Url</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/logout" method="post">
+      <span class="navbar-text">Welcome back, <%= username %></span>
+      <button class="btn btn-danger" type="submit">Logout</button>
+    </form>
+  <% } else { %>
+    <form class="form-inline my-2 my-lg-0" action="/login" method="post">
+      <input class="form-control" type="text" placeholder="Email" name="email">
+      <input class="form-control" type="password" placeholder="Password" name="password">
+      <button class="btn" type="submit">Login</button>
+      <a class="btn btn-primary" href="/register">Register</a>
+    </form>
+  <% } %>
+</nav>

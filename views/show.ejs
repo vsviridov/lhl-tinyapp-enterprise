@@ -1,0 +1,13 @@
+<%- include("partials/_header") %>
+<form action="/urls/<%= url.id %>" method="post">
+  <div class="form-group">
+    <label for="longUrl">URL</label>
+    <div class="input-group">
+      <div class="input-group-addon"><%= url.id %></div>
+      <input id="longUrl" type="text" class="form-control" placeholder="http://" name="longUrl" value="<%= url.longUrl %>">
+    </div>
+  </div>
+  <a href="/urls" class="btn">Back</a>
+  <button class="btn" type="submit">Save</button>
+</form>
+<%- include("partials/_footer") %>

@@ -1,0 +1,34 @@
+<%- include("partials/_header") %>
+<h1>All Urls</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Short URL</th>
+      <th>Long URL</th>
+      <th>Clicks</th>
+      <th>Last Click</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% urls.forEach(function(url) { %>
+    <tr>
+      <td>
+        <a href="/urls/<%= url.id %>"><%= url.id %></a>
+      </td>
+      <td>
+        <a href="/u/<%= url.id %>"><%= url.longUrl %></a>
+      </td>
+      <td><%= url.clicks %></td>
+      <td><%= url.lastClick %></td>
+      <td>
+        <form action="/urls/<%= url.id %>/delete" method="post">
+          <a href="/urls/<%= url.id %>" class="btn">Edit</a>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+<%- include("partials/_footer") %>
